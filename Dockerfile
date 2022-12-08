@@ -3,8 +3,8 @@ FROM ${BASE_IMAGE}
 
 ENV DEBIAN_FRONTEND=noninteractive 
 
-RUN  echo "52.22.146.88 index.docker.io" >> /etc/hosts \
-  && apt-get update \
+#RUN  echo "52.22.146.88 index.docker.io" >> /etc/hosts \
+RUN apt-get update \
   && apt-get install -y -qq --no-install-recommends \
        curl \
        apt-utils \
@@ -15,9 +15,9 @@ RUN  echo "52.22.146.88 index.docker.io" >> /etc/hosts \
   \
   && apt-get install -y -qq \
      iputils-ping \
-     build-essential \
-     python-virtualenv \
-     python-dev \
+     build-essential 
+
+RUN apt-get install -y -qq --no-install-recommends \
      vim \
      git \
      sudo \
@@ -96,9 +96,6 @@ RUN pip3 --no-cache-dir install -U scikit-learn \
   && pip3 --no-cache-dir install opencv-python \
   && pip3 install tifffile 
 
-RUN pip3 install keras>=2.2.4 \
-  && pip3 install tensorflow
-
 
 # Install latest su-exec
 RUN  set -ex; \
@@ -127,7 +124,7 @@ CMD ["/bin/bash"]
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VCS_URL
-LABEL org.label-schema.vendor="THRIVE Team" \
+LABEL org.label-schema.vendor="HITSZ AI Team" \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url=$VCS_URL \
       org.label-schema.vcs-ref=$VCS_REF \

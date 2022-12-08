@@ -43,5 +43,5 @@ docker run --rm -it \
     -v $HOME:$HOME \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /etc/localtime:/etc/localtime:ro \
-    thrive20/thrive:latest \
+    thrive20/ubuntu-focal:latest \
     "$@"
