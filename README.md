@@ -8,7 +8,11 @@
 
 > bash run.sh
 
+## save changes made to Docker image
+
+> bash save.sh
+
 ## TODO
 
-change DTR name from thrive20 to a new name
+create a new DTR? (current DTR: thrive20)
 
