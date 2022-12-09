@@ -1,1 +1,1 @@
-sudo python commit.py
+python3 commit.py
